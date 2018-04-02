@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 
     //printf("X = %d, Y = %c, Z = %.2f\n", x, y, z);
 
-	printf("Hello World.");
+	printf("Hello, my name is Amir.");
 
     return 0;
 }
