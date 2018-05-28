@@ -1,0 +1,15 @@
+﻿  SFMLProject.cpp
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(22): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(79): warning C4305: '*=': truncation from 'double' to 'float'
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(88): warning C4305: '*=': truncation from 'double' to 'float'
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(135): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(200): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(206): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(212): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(217): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  4 of 64 functions ( 6.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SFMLProject.vcxproj -> C:\Users\Apex\source\repos\SFMLProject\Release\SFMLProject.exe

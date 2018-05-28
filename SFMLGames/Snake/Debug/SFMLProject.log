@@ -1,0 +1,7 @@
+﻿  SFMLProject.cpp
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(54): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(75): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(122): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\apex\source\repos\sfmlproject\sfmlproject\sfmlproject.cpp(127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  SFMLProject.vcxproj -> C:\Users\Apex\source\repos\SFMLProject\Debug\SFMLProject.exe
