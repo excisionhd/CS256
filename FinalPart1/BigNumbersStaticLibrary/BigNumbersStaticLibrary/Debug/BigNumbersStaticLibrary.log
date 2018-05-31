@@ -1,10 +1,10 @@
 ﻿  stdafx.cpp
   BigNumber.cpp
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(149): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(160): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(374): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(378): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(422): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(448): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(455): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(193): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(214): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(458): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(462): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(506): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(548): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(555): warning C4018: '<': signed/unsigned mismatch
   BigNumbersStaticLibrary.vcxproj -> C:\Users\Apex\source\repos\BigNumbersStaticLibrary\Debug\BigNumbersStaticLibrary.lib
