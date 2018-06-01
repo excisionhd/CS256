@@ -1,9 +1,0 @@
-﻿  stdafx.cpp
-  BigNumber.cpp
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(132): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(298): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(318): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(477): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(639): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumbersstaticlibrary\bignumbersstaticlibrary\bignumber.cpp(707): warning C4018: '<': signed/unsigned mismatch
-  BigNumbersStaticLibrary.vcxproj -> C:\Users\Apex\source\repos\BigNumbersStaticLibrary\Debug\BigNumbersStaticLibrary.lib
