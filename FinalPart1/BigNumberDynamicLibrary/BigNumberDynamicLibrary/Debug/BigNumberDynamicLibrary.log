@@ -1,44 +1,55 @@
 ﻿  stdafx.cpp
   BigNumber.cpp
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(20): warning C4273: 'BigNumber::MyBigNumber::MyBigNumber': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(36): note: see previous definition of '{ctor}'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(30): warning C4273: 'BigNumber::MyBigNumber::MyBigNumber': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(35): note: see previous definition of '{ctor}'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(125): warning C4273: 'BigNumber::MyBigNumber::less': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(31): note: see previous definition of 'less'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(156): warning C4273: 'BigNumber::MyBigNumber::lessEqual': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(32): note: see previous definition of 'lessEqual'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(187): warning C4273: 'BigNumber::MyBigNumber::print': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(45): note: see previous definition of 'print'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(193): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(202): warning C4273: 'BigNumber::MyBigNumber::maximum': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(29): note: see previous definition of 'maximum'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(212): warning C4273: 'BigNumber::MyBigNumber::reverse': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(30): note: see previous definition of 'reverse'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(214): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(228): warning C4273: 'BigNumber::MyBigNumber::add': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(27): note: see previous definition of 'add'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(269): warning C4273: 'BigNumber::MyBigNumber::subtract': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(28): note: see previous definition of 'subtract'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(322): warning C4273: 'BigNumber::MyBigNumber::operator /': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(40): note: see previous definition of '/'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(350): warning C4273: 'BigNumber::MyBigNumber::operator +': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(37): note: see previous definition of '+'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(395): warning C4273: 'BigNumber::MyBigNumber::operator -': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(38): note: see previous definition of '-'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(447): warning C4273: 'BigNumber::MyBigNumber::operator *': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(39): note: see previous definition of '*'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(458): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(462): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(506): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(522): warning C4273: 'BigNumber::MyBigNumber::operator ++': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(41): note: see previous definition of '++'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(535): warning C4273: 'BigNumber::MyBigNumber::operator %': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(42): note: see previous definition of '%'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(545): warning C4273: 'BigNumber::MyBigNumber::operator %': inconsistent dll linkage
-  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(43): note: see previous definition of '%'
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(548): warning C4018: '<': signed/unsigned mismatch
-c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(555): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(21): warning C4273: 'BigNumber::MyBigNumber::MyBigNumber': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(49): note: see previous definition of '{ctor}'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(31): warning C4273: 'BigNumber::MyBigNumber::MyBigNumber': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(48): note: see previous definition of '{ctor}'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(67): warning C4273: 'BigNumber::MyBigNumber::setNegative': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(44): note: see previous definition of 'setNegative'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(75): warning C4273: 'BigNumber::MyBigNumber::getNegative': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(45): note: see previous definition of 'getNegative'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(129): warning C4273: 'BigNumber::MyBigNumber::convertToString': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(43): note: see previous definition of 'convertToString'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(132): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(144): warning C4273: 'BigNumber::MyBigNumber::isASmallerString': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(41): note: see previous definition of 'isASmallerString'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(178): warning C4273: 'BigNumber::MyBigNumber::less': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(39): note: see previous definition of 'less'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(209): warning C4273: 'BigNumber::MyBigNumber::lessEqual': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(40): note: see previous definition of 'lessEqual'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(239): warning C4273: 'BigNumber::MyBigNumber::computeSignAndValue': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(42): note: see previous definition of 'computeSignAndValue'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(292): warning C4273: 'BigNumber::MyBigNumber::print': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(57): note: see previous definition of 'print'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(298): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(307): warning C4273: 'BigNumber::MyBigNumber::maximum': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(37): note: see previous definition of 'maximum'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(316): warning C4273: 'BigNumber::MyBigNumber::reverse': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(38): note: see previous definition of 'reverse'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(318): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(331): warning C4273: 'BigNumber::MyBigNumber::add': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(34): note: see previous definition of 'add'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(371): warning C4273: 'BigNumber::MyBigNumber::subtract': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(35): note: see previous definition of 'subtract'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(424): warning C4273: 'BigNumber::MyBigNumber::subtractReturnVector': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(36): note: see previous definition of 'subtractReturnVector'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(477): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(491): warning C4273: 'BigNumber::MyBigNumber::operator /': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(53): note: see previous definition of '/'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(523): warning C4273: 'BigNumber::MyBigNumber::operator +': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(50): note: see previous definition of '+'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(570): warning C4273: 'BigNumber::MyBigNumber::operator -': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(51): note: see previous definition of '-'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(584): warning C4273: 'BigNumber::MyBigNumber::operator *': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(52): note: see previous definition of '*'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(639): warning C4018: '<': signed/unsigned mismatch
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(655): warning C4273: 'BigNumber::MyBigNumber::operator ++': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(54): note: see previous definition of '++'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(668): warning C4273: 'BigNumber::MyBigNumber::operator %': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(55): note: see previous definition of '%'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(703): warning C4273: 'BigNumber::MyBigNumber::operator %': inconsistent dll linkage
+  c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.h(56): note: see previous definition of '%'
+c:\users\apex\source\repos\bignumberdynamiclibrary\bignumberdynamiclibrary\bignumber.cpp(707): warning C4018: '<': signed/unsigned mismatch
   BigNumberDynamicLibrary.cpp
   dllmain.cpp
   Generating Code...

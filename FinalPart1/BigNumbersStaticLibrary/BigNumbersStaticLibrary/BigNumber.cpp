@@ -13,9 +13,10 @@
 #include <iterator> 
 
 using namespace std;
+
 /**
-* Constructor that initializes a big number to 0.
-* @return Returns a BigNumber
+* DEFAULT CONSTRUCTOR: initializes a BigNumber with Digits = 0.
+* @return Returns an instance of a BigNumber
 */
 BigNumber::MyBigNumber::MyBigNumber() {
 	digits.push_back(0);
@@ -23,13 +24,13 @@ BigNumber::MyBigNumber::MyBigNumber() {
 }
 
 /** 
-* Constructor that initializes a big number to string n.
-* @param n is a string
-* @return Returns a BigNumber
+* CONSTRUCTOR: initializes a BigNumber based on given string n.
+* @param Single parameter, string n.
+* @return Returns an instance BigNumber.
 */
 BigNumber::MyBigNumber::MyBigNumber(string n) {
 	string number = n;
-	if (number[0] == '-') {
+	if (n.at(0) == '-') {
 		isNegative = true;
 	}
 	else {
@@ -37,7 +38,7 @@ BigNumber::MyBigNumber::MyBigNumber(string n) {
 	}
 
 	if (isNegative) {
-		//if negative, delete negative sign
+
 		number.erase(0,1);
 		
 		for (int i = number.length()-1; i >= 0; i--) {
@@ -58,9 +59,26 @@ BigNumber::MyBigNumber::MyBigNumber(string n) {
 	
 }
 
-/** @brief isSmaller
-* function that returns true if the first parameter is smaller than second parameter (compares vector digits)
-* @return Returns a bool
+//! setNegative Function
+/*!
+* Modifies the isNegative member variable based on input v.
+* @param Single parameter, bool v.
+*/
+void BigNumber::MyBigNumber::setNegative(bool v) {
+	isNegative = v;
+}
+
+//! getNegative Function
+/*!
+* Returns a boolean value based on isNegative member variable.
+*/
+bool BigNumber::MyBigNumber::getNegative() {
+	return isNegative;
+}
+
+//! isSmaller Function
+/*! Function that returns true if the first parameter is smaller than second parameter (compares vector digits).
+*  @return Returns a boolean value.
 */
 bool isSmaller(vector<int> first, vector<int> second)
 {
@@ -81,9 +99,9 @@ bool isSmaller(vector<int> first, vector<int> second)
 	return false;
 }
 
-/** @brief isSmallerOrEqual
-* function that returns true if the first parameter is smaller than or equal to second parameter (compares vector digits)
-* @return Returns a bool
+//! isSmallerOrEqual Function
+/*! Function that returns true if the first parameter is smaller than OR EQUAL TO second parameter.
+*  @return Returns a boolean value.
 */
 bool isSmallerOrEqual(vector<int> first, vector<int> second)
 {
@@ -104,9 +122,44 @@ bool isSmallerOrEqual(vector<int> first, vector<int> second)
 	return true;
 }
 
-/** @brief divideBy10
-* function divides a vector by 10 (helper function)
-* @return return void
+//! convertToString Function
+/*! Function that converts a given vector into a string (helper function).
+*  @return Returns the string version of the vector.
+*/
+string BigNumber::MyBigNumber::convertToString(vector<int> x) {
+	string s1;
+
+	for (int i = 0; i < x.size(); i++) {
+		s1 += x[i] + '0';
+	}
+	return s1;
+
+}
+
+//! isASmallerString Function
+/*! Function that returns true if first parameter string is greater in length (based on numerical values).
+*  @return Returns a bool.
+*/
+bool BigNumber::MyBigNumber::isASmallerString(string str1, string str2)
+{
+	int n1 = str1.length(), n2 = str2.length();
+
+	if (n1 < n2)
+		return true;
+	if (n2 < n1)
+		return false;
+
+	for (int i = 0; i<n1; i++)
+		if (str1[i] < str2[i])
+			return true;
+		else if (str1[i] > str2[i])
+			return false;
+
+	return false;
+}
+
+//! divideBy10 Function
+/*! Function that divides a vector by 10.
 */
 void divideBy10(vector< int > &num)
 {
@@ -117,20 +170,20 @@ void divideBy10(vector< int > &num)
 	num.resize(size - 1);
 }
 
-/** @brief less
-* function that returns true if the first parameter is smaller than second parameter (compares vector digits)
-* @return Returns a bool
+//! less Function
+/*! Function that returns true if first parameter is smaller than the second parameter numerically.
+* @return Returns a bool.
 */
 bool BigNumber::MyBigNumber::less(vector< int > first, vector< int > second)
 {
 	bool i = 0;
-	int j;
-	int leftOperandSize = first.size();
-	int rightOperandSize = second.size();
+	int j, leftOperandSize = first.size(), rightOperandSize = second.size();
+
 	if (leftOperandSize < rightOperandSize)
 	{
 		i = 1;
 	}
+
 	if (leftOperandSize == rightOperandSize)
 	{
 		for (j = leftOperandSize - 1; j >= 0; j--)
@@ -148,9 +201,9 @@ bool BigNumber::MyBigNumber::less(vector< int > first, vector< int > second)
 	return i;
 }
 
-/** @brief lessEqual
-* function that returns true if the first parameter is smaller than or equal to second parameter (compares vector digits)
-* @return Returns a bool
+//! lessEqual Function
+/*! Function that returns true if the first parameter is smaller than or equal to second parameter (compares vector digits)
+* @return Returns a bool.
 */
 bool BigNumber::MyBigNumber::lessEqual(vector< int > first, vector< int > second)
 {
@@ -179,9 +232,61 @@ bool BigNumber::MyBigNumber::lessEqual(vector< int > first, vector< int > second
 	return i;
 }
 
-/** @brief print
-* function that prints each digit of the BigNumber (loops through vector)
-* @return return void
+//! computeSignAndValue Function
+/*! Function that computes the sign and the value for the difference of two big numbers.
+* @return Returns a BigNumber.
+*/
+BigNumber::MyBigNumber BigNumber::MyBigNumber::computeSignAndValue(BigNumber::MyBigNumber n1, BigNumber::MyBigNumber n2) {
+	MyBigNumber answer;
+
+	bool rightIsBigger = !isSmaller(n1.digits, n2.digits);
+	if (n1.isNegative != n2.isNegative) {
+		if (rightIsBigger && !n1.isNegative) {
+			add(n1.digits, n2.digits, answer.digits);
+			answer.isNegative = false;
+			answer.digits.pop_back();
+		}
+		else if (rightIsBigger && n1.isNegative) {
+			add(n1.digits, n2.digits, answer.digits);
+			answer.isNegative = true;
+		}
+		else if (!rightIsBigger && n2.isNegative) {
+			add(n2.digits, n1.digits, answer.digits);
+			answer.isNegative = false;
+			answer.digits.pop_back();
+		}
+		else if (!rightIsBigger && !n2.isNegative) {
+			add(n2.digits, n1.digits, answer.digits);
+			answer.isNegative = false;
+			answer.digits.pop_back();
+		}
+	}
+	else if (isNegative&&n2.isNegative) {
+		if (rightIsBigger) {
+			subtract(n1.digits, n2.digits, answer.digits);
+			answer.isNegative = true;
+		}
+		else {
+			subtract(n2.digits, n1.digits, answer.digits);
+			answer.isNegative = false;
+		}
+	}
+	else {
+		if (rightIsBigger) {
+			subtract(n1.digits, n2.digits, answer.digits);
+			answer.isNegative = false;
+		}
+		else {
+			answer.isNegative = true;
+			subtract(n2.digits, n1.digits, answer.digits);
+		}
+	}
+	return answer;
+}
+
+
+//! print Function
+/*! Function that prints the digits of a vector in a BigNumber.
 */
 void BigNumber::MyBigNumber::MyBigNumber::print()
 {
@@ -195,19 +300,18 @@ void BigNumber::MyBigNumber::MyBigNumber::print()
 	}
 }
 
-/** @brief max
-* if left parameter is bigger than the right parameter, return true
-* @return returns a bool
-*/ 
+//! max Function
+/*! Function that returns true if left parameter is greater than the right parameter.
+* @return Returns a bool.
+*/
 bool BigNumber::MyBigNumber::max( vector <int> & x,  vector <int> & y) {
 	if (x.size() > y.size())
 		return true;
 	else return false;
 }
 
-/** @brief reverse
-* reverses a given vector (helper function)
-* @return returns void
+//! reverse Function
+/*! Function that reverses the digits of a vector; this is necessary because arithmetic will produce a reversed vector.
 */
 void BigNumber::MyBigNumber::reverse(vector <int> & z) {
 	int temp, j = z.size() - 1;
@@ -220,9 +324,8 @@ void BigNumber::MyBigNumber::reverse(vector <int> & z) {
 	}
 }
 
-/** @brief add
-* a function that adds two vectors and stores into third parameter
-* @return returns void
+//! add Function
+/*! Function that assists the operator overload + in adding two vectors.
 */
 void BigNumber::MyBigNumber::add( vector <int> & x, vector <int> & y, vector <int> & z)
 	{
@@ -262,9 +365,8 @@ void BigNumber::MyBigNumber::add( vector <int> & x, vector <int> & y, vector <in
 
 	}
 
-/** @brief subtract
-* a function that subtracts two vectors and stores into third parameter
-* @return returns void
+//! subtract Function
+/*! Function that assists the operator overload - in subtracting two vectors.
 */
 void BigNumber::MyBigNumber::subtract( vector <int> & x,  vector <int> & y, vector <int> & z) {
 		z.clear();
@@ -315,53 +417,125 @@ void BigNumber::MyBigNumber::subtract( vector <int> & x,  vector <int> & y, vect
 
 	}
 
-/** @brief operator overload /
-* operator overloading that divides two BigNumbers.  EXAMPLE: BigNumber/BigNumber
-* @return returns BigNumber
+//! subtractReturnVector Function
+/*! Function that subtracts the digits of two vectors
+* @return Returns a vector of integers
+*/
+vector<int> BigNumber::MyBigNumber::subtractReturnVector(vector <int> & x, vector <int> & y) {
+
+	string s1 = convertToString(x);
+	string s2 = convertToString(y);
+	vector<int> answer;
+
+	if (isASmallerString(s1, s2))
+		swap(s1, s2);
+
+
+	string result = "";
+
+
+	int n1 = s1.length(), n2 = s2.length();
+
+
+	std::reverse(s1.begin(), s1.end());
+	std::reverse(s2.begin(), s2.end());
+
+	int carry = 0;
+
+	for (int i = 0; i<n2; i++)
+	{
+
+		int sub = ((s1[i] - '0') - (s2[i] - '0') - carry);
+
+		if (sub < 0)
+		{
+			sub = sub + 10;
+			carry = 1;
+		}
+		else
+			carry = 0;
+
+		result.push_back(sub + '0');
+	}
+
+	for (int i = n2; i<n1; i++)
+	{
+		int sub = ((s1[i] - '0') - carry);
+
+		if (sub < 0)
+		{
+			sub = sub + 10;
+			carry = 1;
+		}
+		else
+			carry = 0;
+
+		result.push_back(sub + '0');
+	}
+
+	std::reverse(result.begin(), result.end());
+	for (int i = 0; i < result.length(); i++) {
+		answer.push_back(result[i] - '0');
+	}
+
+	while (answer.at(0) == 0) {
+		answer.erase(answer.begin());
+	}
+	return answer;
+}
+
+//! OPERATOR OVERLOAD / 
+/*! OVERLOADING THE OPERATOR / FOR THE DIVISION OF TWO BIG NUMBERS.  EX: MyBigNumber / MyBigNumber
+* @return Returns a BigNumber
 */
 BigNumber::MyBigNumber BigNumber::MyBigNumber::operator /(MyBigNumber & x) {
-	MyBigNumber answer;
 	MyBigNumber quotient;
-	MyBigNumber one("1");
+	vector<int> firstDigits = digits, secondDigits = x.digits;
+
 	
-	if (x.digits[0] == 0) {
-		cout << "Cannot Divide by 0." << endl;
+	if (firstDigits.at(0) == 0 || secondDigits.at(0) == 0) {
+		cout << "ERROR: DIVIDE BY ZERO" << endl;
 		return quotient;
 	}
 
-	vector<int> afterSubtracting = digits;
 
-	while (isSmaller(x.digits, afterSubtracting)) { 
-		vector<int> hold = afterSubtracting;
-		subtract(hold, x.digits, afterSubtracting);
+
+	MyBigNumber one("1");
+
+	std::cout << "Please wait, division may take awhile..." << std::endl;
+	while (isSmallerOrEqual(secondDigits, firstDigits)) { 
+		vector<int> result = subtractReturnVector(firstDigits, secondDigits);
+		firstDigits = result;
 		quotient = quotient + one;
-
 	}
 
-
+	if (isNegative != x.isNegative) {
+		quotient.setNegative(true);
+	}
 
 	return quotient;
 }
 
-/** @brief operator overload +
-* operator overloading that adds two BigNumbers.  EXAMPLE: BigNumber+BigNumber
-* @return returns BigNumber
+//! OPERATOR OVERLOAD +
+/*! OVERLOADING THE OPERATOR + FOR THE ADDITION OF TWO BIG NUMBERS.  EX: MyBigNumber + MyBigNumber
+* @return Returns a BigNumber
 */
 BigNumber::MyBigNumber BigNumber::MyBigNumber::operator +(MyBigNumber & x) {
 	BigNumber::MyBigNumber answer;
-	answer.digits.clear();
-	bool pre; //if the front one is bigger return true.
+
+	bool leftIsBigger; //if the front one is bigger return true.
 
 	//if both bignumbers are negative, then guaranteed that the answer will be negative
 	if (isNegative == x.isNegative) {
 		answer.isNegative = isNegative;
 		MyBigNumber::add(digits, x.digits, answer.digits);
+		answer.digits.pop_back();
 	}
 
 	else {
-		pre = max(digits, x.digits);
+		leftIsBigger = max(digits, x.digits);
 		//if first bignumber is greater than second big number, then first-second
-		if (pre) { 
+		if (leftIsBigger) { 
 			subtract(digits, x.digits, answer.digits); 
 		}
 		//else second number is bigger than first number, second-first
@@ -373,97 +547,56 @@ BigNumber::MyBigNumber BigNumber::MyBigNumber::operator +(MyBigNumber & x) {
 		answer.isNegative = false;
 
 		//if first bignumber is negative and magnitude is bigger, then the answer will be negative
-		if (isNegative&&pre) {
+		if (isNegative&&leftIsBigger) {
 			answer.isNegative = true; 
 		}
 
 		//if the first big number is positive and is smaller in magnitude,
-		if ((!isNegative) && (!pre)) {
+		if ((!isNegative) && (!leftIsBigger)) {
 			answer.isNegative = true;
 		}
 	}
-	while (answer.digits[0] == 0) {
+
+	while (answer.digits.at(0) == 0) {
 		answer.digits.erase(answer.digits.begin());
 	}
 	return answer;
 }
 
-/** @brief operator overload -
-* operator overloading that subtracts two BigNumbers.  EXAMPLE: BigNumber-BigNumber
-* @return returns BigNumber
+//! OPERATOR OVERLOAD - 
+/*! OVERLOADING THE OPERATOR - FOR THE difference OF TWO BIG NUMBERS.  EX: MyBigNumber - MyBigNumber
+* @return Returns a BigNumber
 */
 BigNumber::MyBigNumber BigNumber::MyBigNumber::operator -(MyBigNumber & x) {
-	MyBigNumber answer;
-	answer.digits.clear();
-	bool pre = !isSmaller(digits, x.digits);
-	if (isNegative != x.isNegative) {
-		if (pre && !isNegative) { 
-			add(digits, x.digits, answer.digits); 
-			answer.isNegative = false;
-		} 
-		else if(pre && isNegative) {
-			add(digits, x.digits, answer.digits);
-			answer.isNegative = true;
-		}
-		else if (!pre && x.isNegative) {
-			add(x.digits, digits, answer.digits);
-			answer.isNegative = false;
-		}
-		else if (!pre && !x.isNegative) {
-			add(x.digits, digits, answer.digits);
-			answer.isNegative = false;
-		}
+
+	MyBigNumber ans = computeSignAndValue(*this, x);
+
+	while (ans.digits.at(0) == 0) {
+		ans.digits.erase(ans.digits.begin());
 	}
-	else if (isNegative&&x.isNegative) {
-		if (pre) {
-			subtract(digits, x.digits, answer.digits);
-			answer.isNegative = true;
-		}
-		else {
-			subtract(x.digits, digits, answer.digits);
-			answer.isNegative = false;
-		}
-	}
-	else {
-		if (pre) {
-			answer.isNegative = false;
-			subtract(digits, x.digits, answer.digits);
-		}
-		else {
-			answer.isNegative = true;
-			subtract(x.digits, digits, answer.digits);
-		}
-	}
-	while (answer.digits[0] == 0) {
-		answer.digits.erase(answer.digits.begin());
-	}
-	return answer;
+	return ans;
 }
 
-/** @brief operator overload *
-* operator overloading that multiplies two BigNumbers.  EXAMPLE: BigNumber/BigNumber
-* @return returns BigNumber
+//! OPERATOR OVERLOAD * 
+/*! OVERLOADING THE OPERATOR * FOR THE MULTIPLICATION OF TWO BIG NUMBERS.  EX: MyBigNumber * MyBigNumber
+* @return Returns a BigNumber
 */
 BigNumber::MyBigNumber BigNumber::MyBigNumber::operator *(MyBigNumber & x) {
 	MyBigNumber answer;
+	string s1 = convertToString(digits);
+	string s2 = convertToString(x.digits);
+
 	if (isNegative != x.isNegative) {
-		answer.isNegative = true;
+		answer.setNegative(true);
 	}
 
 	int n1 = digits.size();
 	int n2 = x.digits.size();
 
-	string s1, s2;
 
-	for (int i = 0; i < digits.size(); i++) {
-		s1 += digits[i]+'0';
-	}
-	
-	for (int i = 0; i < x.digits.size(); i++) {
-		s2 += x.digits[i]+'0';
-	}
+
 	if (s1 == "0" || s2 == "0")
-		return answer;
+		return MyBigNumber(0);
 
 	vector<int> result(n1 + n2, 0);
 
@@ -507,7 +640,7 @@ BigNumber::MyBigNumber BigNumber::MyBigNumber::operator *(MyBigNumber & x) {
 		answer.digits.push_back(s[i]-'0');
 	}
 
-	while (answer.digits[0] == 0) {
+	while (answer.digits.at(0) == 0) {
 		answer.digits.erase(answer.digits.begin());
 	}
 
@@ -515,47 +648,66 @@ BigNumber::MyBigNumber BigNumber::MyBigNumber::operator *(MyBigNumber & x) {
 	return answer;
 }
 
-/** @brief operator overload ++
-* prefix operator overloading that adds 1 to a BigNumber.  EXAMPLE: ++BigNumber
-* @return returns BigNumber
+//! OPERATOR OVERLOAD ++ 
+/*! OVERLOADING THE OPERATOR ++ FOR THE INCREMENTING OF TWO BIG NUMBERS.  EX: ++MyBigNumber
+* @return Returns a BigNumber
 */
 BigNumber::MyBigNumber BigNumber::MyBigNumber::operator ++() {
-	MyBigNumber answer;
-	MyBigNumber x("1");
+	MyBigNumber answer, x("1");
+
 	add(digits, x.digits, answer.digits);
-	cout << answer.digits[0]<<endl;
+
 	return answer;
 }
 
-/** @brief operator overload %
-* prefix operator overloading that takes the modulus of two BigNumbers.  EXAMPLE: BigNumber%BigNumber
-* Unfortunately, this functionality has not been fully implemented due to processing power constraints.
-* @return returns BigNumber
+//! OPERATOR OVERLOAD % 
+/*! OVERLOADING THE OPERATOR % FOR THE MODULUS OF TWO BIG NUMBERS.  EX: MyBigNumber % MyBigNumber
+* NEGATIVE NUMBERS ARE NOT SUPPORTED
+* @return Returns a BigNumber
 */
-BigNumber::MyBigNumber BigNumber::MyBigNumber::operator %(MyBigNumber & r) {
-	cout << "Unfortunately, modulus for big numbers requires heavy computing power, please use an integer as an operand." << endl;
-	return MyBigNumber();
+BigNumber::MyBigNumber BigNumber::MyBigNumber::operator %(MyBigNumber & x) {
+	MyBigNumber quotient;
+	vector<int> firstDigits = digits, secondDigits = x.digits;
+	
+
+	if (firstDigits.at(0) == 0 || secondDigits.at(0) == 0) {
+		cout << "ERROR: DIVIDE BY ZERO" << endl;
+		return quotient;
+	}
+
+
+	MyBigNumber one("1");
+
+	std::cout << "Please wait, division may take awhile..." << std::endl;
+	while (isSmallerOrEqual(secondDigits, firstDigits)) {
+		vector<int> result = subtractReturnVector(firstDigits, secondDigits);
+		firstDigits = result;
+		quotient = quotient + one;
+	}
+
+	MyBigNumber rhs = quotient * x;
+	vector<int> modulus = subtractReturnVector(this->digits, rhs.digits);
+	
+	MyBigNumber answer;
+	answer.digits = modulus;
+
+
+	return answer;
 }
 
-/** @brief operator overload %
-* operator overloading that takes modulus of a BigNumber and and int.  EXAMPLE: BigNumber%int
-* @return returns BigNumber
+//! OPERATOR OVERLOAD % 
+/*! OVERLOADING THE OPERATOR % FOR THE MODULUS OF A BIG NUMBER AND INTEGER.  EX: MyBigNumber / int
+* @return Returns an int
 */
 int BigNumber::MyBigNumber::operator %(int a)
 {
-	string s1;
+	int RESULT = 0;
+	string s1 = convertToString(digits);
 
-	for (int i = 0; i < digits.size(); i++) {
-		s1 += digits[i] + '0';
-	}
-
-	int res = 0;
-
-	// One by one process all digits of 'num'
 	for (int i = 0; i < s1.length(); i++)
-		res = (res * 10 + (int)s1[i] - '0') % a;
+		RESULT = (RESULT * 10 + (int)s1[i] - '0') % a;
 
-	return res;
+	return RESULT;
 }
 
 
